@@ -20,7 +20,6 @@ export default async (req, res, next) => {
         }
 
         req.userId = decoded.id;
-
     }
     catch(e) {
         console.warn(e);
