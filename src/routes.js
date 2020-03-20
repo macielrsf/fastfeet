@@ -12,6 +12,7 @@ routes.post('/sessions', SessionController.store);
 routes.use(authMiddleware);
 
 routes.post('/recipient', RecipientController.store);
+routes.get('/recipient/:id', RecipientController.show);
 routes.put('/recipient/:id', RecipientController.update);
 routes.delete('/recipient/:id', RecipientController.destroy);
 
