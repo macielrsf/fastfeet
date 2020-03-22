@@ -10,7 +10,7 @@
   :warning: Etapa 1/4 do Desafio Final :warning:
 </h3>
 
-<p>Esse desafio faz parte do Desafio Final, que é uma aplicação completa (Back-end, Front-end e Mobile) que é avaliada para emissão do Certificado do Bootcamp GoStack!</p>
+<p>Esse desafio faz parte do Desafio Final, que é uma aplicação completa (Back-end, Front-end e Mobile) que é avaliada para emissão do Certificado do Bootcamp GoStack, oferecido pela [Rocketseat](https://rocketseat.com.br/)!</p>
 
 <blockquote align="center">“Não espere para plantar, apenas tenha paciência para colher”!</blockquote>
 
@@ -29,80 +29,59 @@
 </p>
 
 <p align="center">
-  <a href="#rocket-sobre-o-desafio">Sobre o desafio</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#memo-licença">Licença</a>
+  <a href="#info">Sobre o desafio</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#rocket">Tecnologias Utilizadas</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#memo">Licença</a>
 </p>
 
-## :rocket: Sobre o desafio
+## :info: Sobre a aplicação
 
-A aplicação que iremos dar início ao desenvolvimento a partir de agora é um app para uma transportadora fictícia, o FastFeet.
+A aplicação desenvolvida é um app para uma transportadora fictícia, o FastFeet. Para o desenvolvimento, foi utilizado Node.js + Express com bibliotecas auxiliares para o desenvolvimento de uma API Rest, que serão listadas logo abaixo. Em recursos, a aplicação é composta por um fluxo de autenticação utilizando JWT (JSON Web Token), para assegurar que somente um usuário autenticado possa persistir dados por meio da API. Já o "core" da aplicação é composto pelo cadastro de destinários da transportadora. A aplicação frontend de integração poderá adicionar, editar e remover destinatários, caso este seja adminstrador.
 
-Nesse primeiro desafio vamos criar algumas funcionalidades básicas que aprendemos ao longo das aulas até aqui. Esse projeto será desenvolvido aos poucos até o fim da sua jornada onde você terá uma aplicação completa envolvendo back-end, front-end e mobile, que será utilizada para a **certificação do bootcamp**, então, bora pro código!
+## :rocket: Tecnologias Utilizadas
 
-### **Um pouco sobre as ferramentas**
+- [Node.js](https://nodejs.org/en/)
+- [Express](https://expressjs.com/)
+- [Sucrase](https://github.com/alangpierce/sucrase)
+- [Nodemon](https://nodemon.io/)
+- [Sequelize](https://sequelize.org/)
+- [Docker](https://www.docker.com/)
+- [PostgreSQL](https://www.postgresql.org/)
+- [Vim](https://www.vim.org/) + [NerdTree](https://github.com/preservim/nerdtree)
 
-Você deverá criar a aplicação do zero utilizando o [Express](https://expressjs.com/), além de precisar configurar as seguintes ferramentas:
+## Instalação
 
-- Sucrase + Nodemon;
-- ESLint + Prettier + EditorConfig;
-- Sequelize (Utilize PostgreSQL ou MySQL);
+Primeiramente acesse seu terminal e execute o seguinte comando:
 
-### **Funcionalidades**
+```sh
+https://github.com/macielrsf/bootcamp-gostack-desafio-02
+```
 
-Abaixo estão descritas as funcionalidades que você deve adicionar em sua aplicação.
+Depois de "clonar" o projeto em sua máquina, execute o seguinte comando na raiz do projeto:
 
-### **1. Autenticação**
+```sh
+yarn
+```
 
-Permita que um usuário se autentique em sua aplicação utilizando e-mail e uma senha.
+É necessário ter o [Docker](https://docker.com/) instalado. Crie uma instancia do [PostgreSQL](https://www.postgresql.org/) com as credenciais que estão disponíveis no arquivo "src/config/database.js" deste projeto. Após ter concluído essa etapa basta executar a migração das tabelas utilizadas na aplicação, através do comando:
 
-Crie um usuário administrador utilizando a funcionalidade de [seeds do sequelize](https://sequelize.org/master/manual/migrations.html#creating-first-seed), essa funcionalidade serve para criarmos registros na base de dados de forma automatizada.
+```sh
+yarn sequelize db:migrate
+````
 
-Para criar um seed utilize o comando:
+E executar o "seed" que cria um usuário administrador padrão:
 
-    yarn sequelize seed:generate --name admin-user
+```sh
+yarn sequelize db:seed:all
+```
 
-No arquivo gerado na pasta `src/database/seeds` adicione o código referente à criação de um usuário administrador:
+Após seguir todas essas etapas, já é possível inicializar o backend do FastFeet, através do comando:
 
-    const bcrypt = require("bcryptjs");
+```sh
+yarn dev
+```
 
-    module.exports = {
-      up: QueryInterface => {
-        return QueryInterface.bulkInsert(
-          "users",
-          [
-            {
-              name: "Distribuidora FastFeet",
-              email: "admin@fastfeet.com",
-              password_hash: bcrypt.hashSync("123456", 8),
-              created_at: new Date(),
-              updated_at: new Date()
-            }
-          ],
-          {}
-        );
-      },
-
-      down: () => {}
-    };
-
-Agora execute:
-
-    yarn sequelize db:seed:all
-
-Agora você tem um usuário na sua base de dados, utilize esse usuário para todos os logins que você fizer.
-
-- A autenticação deve ser feita utilizando JWT.
-- Realize a validação dos dados de entrada;
-
-### 2. Gestão de destinatários
-
-Você agora precisa permitir que destinatários sejam mantidos (cadastrados/atualizados) na aplicação, e esses devem ter o **nome** do destinatário e campos de endereço: **rua**, **número**, **complemento**, **estado**, **cidade** e **CEP**.
-
-Utilize uma nova tabela no banco de dados chamada `recipients` para guardar informações do destinatário.
-
-O cadastro de destinatários só pode ser feito por administradores autenticados na aplicação.
-
-O destinatário não pode se autenticar no sistema, ou seja, não possui senha.
+A partir disso, a nossa aplicação backend estará disponível no endereço http://localhost:3333, podendo assim iniciar o desenvolvimento dos frontend's integradores (web e mobile).
 
 ## :memo: Licença
 
