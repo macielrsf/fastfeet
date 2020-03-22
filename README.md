@@ -55,7 +55,7 @@ A aplicação desenvolvida é um app para uma transportadora fictícia, o FastFe
 Primeiramente acesse seu terminal e execute o seguinte comando:
 
 ```sh
-https://github.com/macielrsf/bootcamp-gostack-desafio-02
+git clone https://github.com/macielrsf/bootcamp-gostack-desafio-02
 ```
 
 Depois de "clonar" o projeto em sua máquina, execute o seguinte comando na raiz do projeto:
