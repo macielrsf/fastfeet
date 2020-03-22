@@ -10,7 +10,7 @@
   :warning: Etapa 1/4 do Desafio Final :warning:
 </h3>
 
-<p>Esse desafio faz parte do Desafio Final, que é uma aplicação completa (Back-end, Front-end e Mobile) que é avaliada para emissão do Certificado do Bootcamp GoStack, oferecido pela [Rocketseat](https://rocketseat.com.br/)!</p>
+Esse desafio faz parte do Desafio Final, que é uma aplicação completa (Back-end, Front-end e Mobile) que é avaliada para emissão do Certificado do Bootcamp GoStack, oferecido pela [Rocketseat](https://rocketseat.com.br/)!
 
 <blockquote align="center">“Não espere para plantar, apenas tenha paciência para colher”!</blockquote>
 
@@ -29,12 +29,13 @@
 </p>
 
 <p align="center">
-  <a href="#info">Sobre o desafio</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#information_source">Sobre o desafio</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#rocket">Tecnologias Utilizadas</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#wrench">Instalação</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#memo">Licença</a>
 </p>
 
-## :info: Sobre a aplicação
+## :information_source: Sobre a aplicação
 
 A aplicação desenvolvida é um app para uma transportadora fictícia, o FastFeet. Para o desenvolvimento, foi utilizado Node.js + Express com bibliotecas auxiliares para o desenvolvimento de uma API Rest, que serão listadas logo abaixo. Em recursos, a aplicação é composta por um fluxo de autenticação utilizando JWT (JSON Web Token), para assegurar que somente um usuário autenticado possa persistir dados por meio da API. Já o "core" da aplicação é composto pelo cadastro de destinários da transportadora. A aplicação frontend de integração poderá adicionar, editar e remover destinatários, caso este seja adminstrador.
 
@@ -49,7 +50,7 @@ A aplicação desenvolvida é um app para uma transportadora fictícia, o FastFe
 - [PostgreSQL](https://www.postgresql.org/)
 - [Vim](https://www.vim.org/) + [NerdTree](https://github.com/preservim/nerdtree)
 
-## Instalação
+## :wrench: Instalação
 
 Primeiramente acesse seu terminal e execute o seguinte comando:
 
@@ -63,7 +64,7 @@ Depois de "clonar" o projeto em sua máquina, execute o seguinte comando na raiz
 yarn
 ```
 
-É necessário ter o [Docker](https://docker.com/) instalado. Crie uma instancia do [PostgreSQL](https://www.postgresql.org/) com as credenciais que estão disponíveis no arquivo "src/config/database.js" deste projeto. Após ter concluído essa etapa basta executar a migração das tabelas utilizadas na aplicação, através do comando:
+É necessário ter o [Docker](https://docker.com/) instalado. Crie uma instancia do [PostgreSQL](https://www.postgresql.org/) com as credenciais que estão disponíveis no arquivo "src/config/database.js" deste projeto. Após ter concluído essa etapa, basta executar a migração das tabelas utilizadas na aplicação, através do comando:
 
 ```sh
 yarn sequelize db:migrate
@@ -81,7 +82,7 @@ Após seguir todas essas etapas, já é possível inicializar o backend do FastF
 yarn dev
 ```
 
-A partir disso, a nossa aplicação backend estará disponível no endereço http://localhost:3333, podendo assim iniciar o desenvolvimento dos frontend's integradores (web e mobile).
+A partir disso, a nossa aplicação backend estará disponível no endereço http://localhost:3333/, podendo assim iniciar o desenvolvimento dos frontend's integradores (web e mobile).
 
 ## :memo: Licença
 
