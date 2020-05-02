@@ -23,7 +23,7 @@ Esse desafio faz parte do Desafio Final, que é uma aplicação completa (Back-e
 
   <img alt="License" src="https://img.shields.io/badge/license-MIT-%2304D361">
 
-  <a href="https://github.com/macielrsf/bootcamp-gostack-desafio-02/stargazers">
+  <a href="https://github.com/macielrsf/fastfeet/stargazers">
     <img alt="Stargazers" src="https://img.shields.io/github/stars/rocketseat/bootcamp-gostack-desafio-02?style=social">
   </a>
 </p>
@@ -55,7 +55,7 @@ A aplicação desenvolvida é um app para uma transportadora fictícia, o FastFe
 Primeiramente acesse seu terminal e execute o seguinte comando:
 
 ```sh
-git clone https://github.com/macielrsf/bootcamp-gostack-desafio-02
+git clone https://github.com/macielrsf/fastfeet
 ```
 
 Depois de "clonar" o projeto em sua máquina, execute o seguinte comando na raiz do projeto:
