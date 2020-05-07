@@ -5,6 +5,7 @@ class Deliveryman extends Model {
         super.init({
             name: Sequelize.STRING,
             email: Sequelize.STRING,
+            avatar_id: Sequelize.INTEGER,
         }, {
             freezeTableName: true,
             modelName: 'deliveryman',
