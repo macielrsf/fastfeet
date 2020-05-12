@@ -2,6 +2,11 @@ import * as Yup from 'yup';
 
 import Order from '../models/Order';
 import Deliveryman from '../models/Deliveryman';
+import Recipient from '../models/Recipient';
+
+import NewOrderMail from '../jobs/NewOrderMail';
+
+import Queue from '../../lib/Queue';
 
 class OrderController {
     async index(req, res) {
@@ -23,7 +28,23 @@ class OrderController {
             return res.json({ error: 'Validation fails.' });
         }
 
-        const order = await Order.create(req.body);
+        let order = await Order.create(req.body);
+
+        order = await Order.findByPk(order.id, {
+            include: [{
+                model: Deliveryman,
+                as: 'deliveryman',
+                attributes: ['name', 'email']
+            }, {
+                model: Recipient,
+                as: 'recipient',
+                attributes: ['complete_address', 'name']
+            }],
+        });
+
+        await Queue.add(NewOrderMail.key, {
+            order,
+        })
 
         return res.json(order);
     }
