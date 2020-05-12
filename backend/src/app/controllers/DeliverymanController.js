@@ -4,7 +4,6 @@ import Deliveryman from '../models/Deliveryman';
 import File from '../models/File';
 
 class DeliverymanController {
-
     async index(req, res) {
         const deliverymen = await Deliveryman.findAll({
             include: [{
