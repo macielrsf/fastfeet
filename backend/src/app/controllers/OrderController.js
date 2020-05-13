@@ -38,7 +38,6 @@ class OrderController {
             }, {
                 model: Recipient,
                 as: 'recipient',
-                attributes: ['complete_address', 'name']
             }],
         });
 
