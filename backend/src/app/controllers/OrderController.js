@@ -43,7 +43,7 @@ class OrderController {
 
         await Queue.add(NewOrderMail.key, {
             order,
-        })
+        });
 
         return res.json(order);
     }
